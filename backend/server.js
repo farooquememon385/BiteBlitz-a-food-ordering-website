@@ -1,16 +1,20 @@
 require('dotenv').config()
 
 const express = require('express')
+// for accessing/allowing requests to backend
+const cors = require('cors');
+
 const routes = require('./routes')
 // use postman to test APIs
 
 const app = express()
 
-// Middle ware
-app.use((req, resp, next) => {
-    console.log(req.path, req.method)
-    next()
-})
+
+app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000' // Allow only this origin to access the resources
+  }));
+  
 
 app.use(routes)
 

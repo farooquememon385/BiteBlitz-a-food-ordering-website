@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, resp) =>{
-    resp.json({msg: "Welcome to food ordering website"})
+    resp.status(200).json({msg: "Welcome to food ordering website"})
 })
 
 router.get('/:id', (req, resp)=>{

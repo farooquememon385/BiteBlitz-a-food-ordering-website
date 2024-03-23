@@ -1,12 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react';
 import HomeImage from '../images/home-img.png'
 import Step1 from '../images/step-1.jpg'
 import Step2 from '../images/step-2.jpg'
 import Step3 from '../images/step-3.jpg'
 import Step4 from '../images/step-4.jpg'
-import loaderImg from '../images/loader.gif'
+
 const Home = () => {
+  const [workouts, setWorkouts] = useState([])
+  useEffect(()=>{
+    const fetchHome = async () => {
+      const response = await fetch('http://localhost:4000')
+      if(response.ok){
+        const json = await response.json();
+        setWorkouts(json)
+      }
+      else{
+        console.log("response is not Ok")
+      }
+    }
+    fetchHome()
+  }, [])
+  console.log(workouts)
+
   return (
     <div>
       <section className="home" id="home">
