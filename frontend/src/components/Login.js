@@ -1,4 +1,5 @@
 
+    import logiImg from '../images/login.jpg'
     const Login = () => {
         function handleFormSubmit(e){
             e.preventDefault();
@@ -10,10 +11,9 @@
           {/*?php include 'loginConfig.php'?*/}
           <div className="row">
             <div className="image">
-              <img src="images/login.jpg" alt="" />
+              <img src={logiImg} alt="" />
             </div>
-            <form onSubmit={handleFormSubmit}>
-              <div className="login">
+            <form onSubmit={handleFormSubmit} className='login'>
                 <br />
                 <div className="inputBox">
                   <input name="username" type="Username" placeholder="username" required />
@@ -24,11 +24,12 @@
                 </div>
                 <br />
                 <input name="submit" type="submit" defaultValue="Login" className="btn" />
+                
+                </form>
                 <p className="login" style={{fontSize: 'medium', paddingTop: '2rem'}}>
                   Don't Have Account? 
-                  <button type="submit" style={{cursor: 'pointer', fontWeight: 'bolder', color: 'blue'}}>SignUp</button>
+                  <a href='/register' style={{cursor: 'pointer', fontWeight: 'bolder', color: 'blue'}}>Register</a>
                 </p>
-              </div></form>
           </div></section>
       );
     };
