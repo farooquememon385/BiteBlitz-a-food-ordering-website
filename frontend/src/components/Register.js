@@ -2,7 +2,7 @@ const Register = () => {
       return (
   
         <section className="order" id="order">
-          <h1 className="heading"> <span>Signup</span> Here</h1>
+          <h1 className="heading"> <span>Register</span> Here</h1>
           {/*?php include 'config.php'?*/}
           <div className="row">
             <form action method="POST">
@@ -18,7 +18,7 @@ const Register = () => {
                 <input type="username" name="username" placeholder="Username (Unique)" required />
                 <input type="password" name="password" placeholder="Password" required />
               </div>
-              <input type="submit" name="submit" defaultValue="Sign Up" className="btn" />
+              <input type="submit" name="submit" defaultValue="Register" className="btn" />
             </form>
           </div>
         </section>
