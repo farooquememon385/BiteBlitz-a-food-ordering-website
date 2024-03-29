@@ -23,7 +23,7 @@
                   <input name="password" type="password" placeholder="Password" required />
                 </div>
                 <br />
-                <input name="submit" type="submit" defaultValue="Login" className="btn" />
+                <input name="submit" type="submit" value="Login" className="btn" />
                 
                 </form>
                 <p className="login" style={{fontSize: 'medium', paddingTop: '2rem'}}>

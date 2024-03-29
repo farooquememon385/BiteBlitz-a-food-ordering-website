@@ -4,7 +4,7 @@ const express = require('express')
 // for accessing/allowing requests to backend
 const cors = require('cors');
 
-const routes = require('./routes')
+const specialityRoutes = require('./routes/speciality')
 // use postman to test APIs
 
 const app = express()
@@ -17,7 +17,7 @@ app.use(cors());
 //   }));
   
 
-app.use(routes)
+app.use('/speciality',specialityRoutes)
 
 
 app.listen(process.env.PORT, () => {

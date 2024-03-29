@@ -18,7 +18,7 @@ const Register = () => {
                 <input type="username" name="username" placeholder="Username (Unique)" required />
                 <input type="password" name="password" placeholder="Password" required />
               </div>
-              <input type="submit" name="submit" defaultValue="Register" className="btn" />
+              <input type="submit" name="submit" value="Register" className="btn" />
             </form>
           </div>
         </section>
