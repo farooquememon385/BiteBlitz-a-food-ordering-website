@@ -5,12 +5,12 @@ const cors = require('cors');
 require('dotenv').config()
 
 // // // //  use postman to test APIs // // // 
+const mongoose = require('mongoose')
+const express = require('express')
+const app = express()
+
 
 const specialityRoutes = require('./routes/speciality')
-
-const express = require('express')
-
-const app = express()
 
 app.use(cors());
 
@@ -25,8 +25,14 @@ app.use(express.json())
 
 app.use('/speciality',specialityRoutes)
 
-app.listen(process.env.PORT, () => {
-    console.log('server is listening on Port:', process.env.PORT)
+mongoose.connect(process.env.MONGO_URI)
+.then(()=>{
+    app.listen(process.env.PORT, () => {
+        console.log('database connected & server is listening on Port:', process.env.PORT)
+    })
+})
+.catch((error)=>{
+    console.log(error)
 })
 
 /**
