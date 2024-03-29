@@ -1,11 +1,10 @@
 const express = require('express')
-
+const Speciality = require('../models/speciality')
 const router = express.Router()
 
 // Route to fetch categories
 router.get('/', (req, res) => {
     try {
-      // Sample data (replace with your actual data)
       const categories = [
         {
           categoryID: 1,
@@ -31,8 +30,15 @@ router.get('/:id', (req, resp) =>{
     resp.status(200).json({msg: "Get specific Category"})
 })
 
-router.post('/', (req, resp) =>{
-  resp.status(200).json({msg: "Post new Category"})
+router.post('/', async (req, resp) =>{
+  const {title, description} = req.body
+
+  try{
+    const speciality = await Speciality.create({title, description})
+    res.status(200).json(speciality)
+  } catch (error){
+    res.status(400).json({error: error.message})
+  }
 })
 
 router.delete('/:id', (req, resp) =>{
