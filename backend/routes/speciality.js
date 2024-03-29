@@ -3,9 +3,8 @@ const express = require('express')
 const router = express.Router()
 
 // Route to fetch categories
-router.get('/categories', (req, res) => {
+router.get('/', (req, res) => {
     try {
-      // Sample data (replace with your actual data)
       const categories = [
         {
           categoryID: 1,
@@ -18,8 +17,7 @@ router.get('/categories', (req, res) => {
           picPath: "path/to/image2.jpg",
           description: "Description for category 2",
           categoryName: "Category 2"
-        },
-        // Add more sample data as needed
+        }
       ];
       res.status(200).json(categories);
     } catch (error) {
@@ -28,24 +26,20 @@ router.get('/categories', (req, res) => {
     }
   });
 
-router.get('/', (req, resp) =>{
-    resp.status(200).json({msg: "Welcome to food ordering website"})
+router.get('/:id', (req, resp) =>{
+    resp.status(200).json({msg: "Get specific Category"})
 })
 
-router.get('/:id', (req, resp)=>{
-    resp.json("Get a single data")
+router.post('/', (req, resp) =>{
+  resp.status(200).json({msg: "Post new Category"})
 })
 
-router.post('/', (req, resp)=>{
-    
+router.delete('/:id', (req, resp) =>{
+  resp.status(200).json({msg: "Delete a Category"})
 })
 
-router.delete('/:id', (req, resp) => {
-
-})
-
-router.patch('/:id', (req, resp)=>{
-
+router.patch('/:id', (req, resp) =>{
+  resp.status(200).json({msg: "Update a specific Category"})
 })
 
 module.exports = router
