@@ -5,6 +5,7 @@ const router = express.Router()
 // Route to fetch categories
 router.get('/', (req, res) => {
     try {
+      // Sample data (replace with your actual data)
       const categories = [
         {
           categoryID: 1,
