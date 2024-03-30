@@ -1,6 +1,7 @@
 const express = require('express')
-const Speciality = require('../models/speciality')
 const router = express.Router()
+
+const Speciality = require('../models/speciality')
 
 // Route to fetch categories
 router.get('/', (req, res) => {

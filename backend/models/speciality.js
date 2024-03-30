@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const Speciality = new Schema(
+const specialitySchema = new Schema(
     {
         title : {
             type: String,
@@ -18,4 +18,6 @@ const Speciality = new Schema(
     }
 )
 
-module.exports = mongoose.model('Speciality', Speciality)
+const Speciality = mongoose.model('Speciality', specialitySchema)
+
+module.exports = Speciality

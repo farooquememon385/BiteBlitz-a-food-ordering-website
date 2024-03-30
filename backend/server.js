@@ -11,7 +11,7 @@ const app = express()
 
 
 const specialityRoutes = require('./routes/speciality')
-
+const userRoute = require('./routes/user')
 app.use(cors());
 
 // to get request data and attach to req object
@@ -24,6 +24,7 @@ app.use(express.json())
 
 
 app.use('/speciality',specialityRoutes)
+app.use('/user', userRoute)
 
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
