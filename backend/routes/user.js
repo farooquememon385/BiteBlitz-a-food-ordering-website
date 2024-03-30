@@ -1,10 +1,12 @@
 const express = require('express')
 const router = express.Router()
 
-const {Title, Person} = require('../models/user')
+const { addUser, getUsers, getUser } = require('../controllers/user')
 
-router.get('/', (req, res)=>{
-    res.json({msg:"get all users"})
-})
+router.get('/', getUsers)
+
+router.get('/:id', getUser)
+
+router.post('/', addUser)
 
 module.exports = router

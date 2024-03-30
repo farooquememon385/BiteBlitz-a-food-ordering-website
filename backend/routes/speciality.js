@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const Speciality = require('../models/speciality')
+const { addSpeciality } = require('../controllers/speciality')
 
 // Route to fetch categories
 router.get('/', (req, res) => {
@@ -31,16 +31,7 @@ router.get('/:id', (req, resp) =>{
     resp.status(200).json({msg: "Get specific Category"})
 })
 
-router.post('/', async (req, resp) =>{
-  const {title, description} = req.body
-
-  try{
-    const speciality = await Speciality.create({title, description})
-    res.status(200).json(speciality)
-  } catch (error){
-    res.status(400).json({error: error.message})
-  }
-})
+router.post('/', addSpeciality(req, resp))
 
 router.delete('/:id', (req, resp) =>{
   resp.status(200).json({msg: "Delete a Category"})
