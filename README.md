@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Food Ordering Website
+## Backend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Frontedn
 
 ## Available Scripts
 
