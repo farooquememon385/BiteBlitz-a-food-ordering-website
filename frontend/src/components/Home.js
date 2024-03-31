@@ -28,7 +28,9 @@ const Home = () => {
       <section className="home" id="home">
         <div className="content">
           <h3>FOOD MADE WITH LOVE</h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas accusamus tempore temporibus rem amet laudantium animi optio voluptatum. Natus obcaecati unde porro nostrum ipsam itaque impedit incidunt rem quisquam eos!</p>
+          <p>
+            
+          </p>
         </div>
         <div className="image">
           <img src= {HomeImage} alt="Home Image" />
