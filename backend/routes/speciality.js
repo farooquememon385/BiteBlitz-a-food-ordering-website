@@ -1,23 +1,17 @@
 const express = require('express')
 const router = express.Router()
 
-const { addSpeciality , getSpeciality} = require('../controllers/speciality')
+const { addSpeciality, getSpecialities, getSpeciality, deleteSpeciality, updateSpeciality } = require('../controllers/speciality')
 
 // Route to fetch categories
-router.get('/', getSpeciality);
+router.get('/', getSpecialities);
 
-router.get('/:id', (req, resp) =>{
-    resp.status(200).json({msg: "Get specific Category"})
-})
+router.get('/:id', getSpeciality)
 
 router.post('/', addSpeciality)
 
-router.delete('/:id', (req, resp) =>{
-  resp.status(200).json({msg: "Delete a Category"})
-})
+router.delete('/:id', deleteSpeciality)
 
-router.patch('/:id', (req, resp) =>{
-  resp.status(200).json({msg: "Update a specific Category"})
-})
+router.patch('/:id', updateSpeciality)
 
 module.exports = router

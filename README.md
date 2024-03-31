@@ -10,7 +10,7 @@ In the project directory, you can run:
 Runs the backend server in the development mode.\
 The server automatically restarts when you make changes.\
 
-## Frontedn
+## Frontend
 
 ### Available Scripts
 
