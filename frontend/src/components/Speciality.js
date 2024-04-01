@@ -33,7 +33,7 @@ const Speciality = () => {
             <div className="content">
               <img src="images/s-6.png" alt="" />
               <h3>{category.categoryName}</h3>
-              <p>{category.description || "RETRO gives you best place to enjoy your Fresh Foods with your family. Innovative shakes that suits with your taste which comprises in health and hygiene."}</p>
+              <p>{category.description || "BiteBlitz gives you best place to enjoy your Fresh Foods with your family. Innovative shakes that suits with your taste which comprises in health and hygiene."}</p>
             </div>
           </div>
         ))}
