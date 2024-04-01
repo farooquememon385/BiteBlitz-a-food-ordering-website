@@ -7,13 +7,13 @@ import Step3 from '../images/step-3.jpg'
 import Step4 from '../images/step-4.jpg'
 
 const Home = () => {
-  const [workouts, setWorkouts] = useState([])
+  const [spcialities, setSpeciality] = useState([])
   useEffect(()=>{
     const fetchHome = async () => {
-      const response = await fetch('http://localhost:4000')
+      const response = await fetch('http://localhost:4000/speciality')
       if(response.ok){
         const json = await response.json();
-        setWorkouts(json)
+        setSpeciality(json)
       }
       else{
         console.log("response is not Ok")
@@ -21,7 +21,7 @@ const Home = () => {
     }
     fetchHome()
   }, [])
-  console.log(workouts)
+  console.log(spcialities)
 
   return (
     <div>

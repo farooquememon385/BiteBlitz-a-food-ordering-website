@@ -10,13 +10,14 @@ const addSpeciality = async (req, resp) =>{
   }
 }
 
-const getSpecialities = (req, res) => {
+const getSpecialities = async (req, res) => {
   try {
-    const categories = Speciality.find({}).sort({createdAt: -1})
+    const categories = await Speciality.find({}).sort({createdAt: -1})
+    console.log(categories)
     res.status(200).json(categories);
   } catch (error) {
-    console.error('Error fetching categories:', error);
-    res.status(500).json({ message: 'Server error' });
+    console.error('Error fetching categories:', error.message);
+    res.status(500).json({ message: error.message });
   }
 }
 

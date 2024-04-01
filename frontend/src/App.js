@@ -6,6 +6,8 @@ import Footer from './components/Footer.';
 import Login from './components/Login';
 import Register from './components/Register';
 import Speciality from './components/Speciality';
+import AddCategory from './components/AddCategory';
+
 function App() {
   return (
     <div className="App">
@@ -19,6 +21,10 @@ function App() {
         <Route 
         path='/speciality'
         element={<Speciality/>}
+        />
+        <Route 
+        path='/addCategory'
+        element={<AddCategory/>}
         />
         <Route 
         path='/login'
